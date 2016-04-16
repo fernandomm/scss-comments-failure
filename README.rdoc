@@ -1,28 +1,5 @@
-== README
+== scss-rails compressor bug
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project shows a bug with scss-rails compressor when you have an invalid css (see file app/assets/stylesheets/example.css).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+If you run "rake assets:precompile RAILS_ENV=production" ( or RAILS_ENV=test ), it will result in a Sass::SyntaxError exception. The exception doesn't happen when you run in development environment or with config.css_compressor = false.
